@@ -3,16 +3,18 @@ package examen1_paulinaeuceda;
 import java.util.ArrayList;
 
 public class Tutoria {
+
     private int hora, aula, dia;
     private String clase;
-    private String mes, año;
+    private String mes;
+    private int año;
     private Tutor tutor;
     private ArrayList<Alumno> alumnos;
 
     public Tutoria() {
     }
 
-    public Tutoria(int hora, int aula, int dia, String clase, String mes, String año, Tutor tutor, ArrayList<Alumno> alumnos) {
+    public Tutoria(int hora, int aula, int dia, String clase, String mes, int año, Tutor tutor, ArrayList<Alumno> alumnos) {
         this.hora = hora;
         this.aula = aula;
         this.dia = dia;
@@ -63,11 +65,11 @@ public class Tutoria {
         this.mes = mes;
     }
 
-    public String getAño() {
+    public int getAño() {
         return año;
     }
 
-    public void setAño(String año) {
+    public void setAño(int año) {
         this.año = año;
     }
 
@@ -91,6 +93,5 @@ public class Tutoria {
     public String toString() {
         return "Tutoria{" + "hora=" + hora + ", aula=" + aula + ", dia=" + dia + ", clase=" + clase + ", mes=" + mes + ", a\u00f1o=" + año + ", tutor=" + tutor + ", alumnos=" + alumnos + '}';
     }
-    
-    
+
 }

@@ -7,11 +7,10 @@ public class Estudiantes extends Alumno{
     private int enseñanza;
     ArrayList<Examen> Examenes;
 
-    public Estudiantes(int conocimiento, int enseñanza, ArrayList<Examen> Examenes, String nombre, int edad, String carrera, String lugar, int cuenta, String usuario, String contraseña) {
+    public Estudiantes(int conocimiento, int enseñanza, String nombre, int edad, String carrera, String lugar,int cuenta, String usuario, String contraseña) {
         super(nombre, edad, carrera, lugar, cuenta, usuario, contraseña);
         this.conocimiento = conocimiento;
         this.enseñanza = enseñanza;
-        this.Examenes = Examenes;
     }
 
     public int getConocimiento() {
@@ -40,7 +39,7 @@ public class Estudiantes extends Alumno{
 
     @Override
     public String toString() {
-        return "Estudiantes{" + "conocimiento=" + conocimiento + ", ense\u00f1anza=" + enseñanza + ", Examenes=" + Examenes + '}';
+        return super.getNombre();
     }
     
     

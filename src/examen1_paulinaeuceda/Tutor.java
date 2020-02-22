@@ -11,12 +11,11 @@ public class Tutor extends Alumno{
     public Tutor() {
     }
 
-    public Tutor(int ganancias, int tutorias, int enseñanza, ArrayList<String> clases, String nombre, int edad, String carrera, String lugar, int cuenta, String usuario, String contraseña) {
+    public Tutor(int ganancias, int tutorias, int enseñanza, String nombre, int edad, String carrera, String lugar,int  cuenta, String usuario, String contraseña) {
         super(nombre, edad, carrera, lugar, cuenta, usuario, contraseña);
         this.ganancias = ganancias;
         this.tutorias = tutorias;
         this.enseñanza = enseñanza;
-        this.clases = clases;
     }
 
     public int getGanancias() {
@@ -53,7 +52,7 @@ public class Tutor extends Alumno{
 
     @Override
     public String toString() {
-        return "Tutor{" + "ganancias=" + ganancias + ", tutorias=" + tutorias + ", ense\u00f1anza=" + enseñanza + ", clases=" + clases + '}';
+        return super.getNombre();
     }
     
     
