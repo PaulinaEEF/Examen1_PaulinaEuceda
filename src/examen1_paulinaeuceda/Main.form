@@ -195,7 +195,7 @@
                               </Group>
                           </Group>
                       </Group>
-                      <EmptySpace pref="721" max="32767" attributes="0"/>
+                      <EmptySpace pref="719" max="32767" attributes="0"/>
                   </Group>
               </Group>
             </DimensionLayout>
@@ -292,7 +292,7 @@
             </Component>
             <Component class="javax.swing.JButton" name="jb_estudiante">
               <Properties>
-                <Property name="text" type="java.lang.String" value="Crear Estudante"/>
+                <Property name="text" type="java.lang.String" value="Crear Estudiante"/>
               </Properties>
               <Events>
                 <EventHandler event="mouseClicked" listener="java.awt.event.MouseListener" parameters="java.awt.event.MouseEvent" handler="jb_estudianteMouseClicked"/>
@@ -693,30 +693,30 @@
             <DimensionLayout dim="0">
               <Group type="103" groupAlignment="0" attributes="0">
                   <Group type="102" attributes="0">
-                      <EmptySpace max="-2" attributes="0"/>
+                      <EmptySpace min="-2" pref="10" max="-2" attributes="0"/>
                       <Group type="103" groupAlignment="0" attributes="0">
-                          <Component id="jLabel17" alignment="0" min="-2" max="-2" attributes="0"/>
                           <Component id="jLabel18" alignment="0" min="-2" max="-2" attributes="0"/>
                           <Component id="jLabel19" alignment="0" min="-2" max="-2" attributes="0"/>
                           <Component id="jLabel20" alignment="0" min="-2" max="-2" attributes="0"/>
                           <Component id="Mes" alignment="0" min="-2" max="-2" attributes="0"/>
                           <Component id="jLabel22" alignment="0" min="-2" max="-2" attributes="0"/>
-                          <Component id="jTextField1" min="-2" pref="76" max="-2" attributes="0"/>
                           <Component id="tf_dia" alignment="0" min="-2" pref="67" max="-2" attributes="0"/>
                           <Component id="tf_claseR" alignment="0" min="-2" pref="67" max="-2" attributes="0"/>
                           <Component id="tf_mes" alignment="0" min="-2" pref="67" max="-2" attributes="0"/>
                           <Component id="tf_año" alignment="0" min="-2" pref="67" max="-2" attributes="0"/>
                           <Component id="tf_aula" alignment="0" min="-2" pref="67" max="-2" attributes="0"/>
+                          <Component id="tf_hora" alignment="0" min="-2" pref="76" max="-2" attributes="0"/>
+                          <Component id="jLabel17" alignment="0" min="-2" max="-2" attributes="0"/>
                       </Group>
-                      <EmptySpace max="32767" attributes="0"/>
-                      <Group type="103" groupAlignment="0" max="-2" attributes="0">
-                          <Component id="jLabel21" min="-2" max="-2" attributes="0"/>
+                      <EmptySpace min="-2" pref="400" max="-2" attributes="0"/>
+                      <Group type="103" groupAlignment="0" attributes="0">
                           <Component id="jLabel23" min="-2" max="-2" attributes="0"/>
-                          <Component id="jButton2" max="32767" attributes="0"/>
-                          <Component id="cb_tutor" alignment="0" max="32767" attributes="0"/>
-                          <Component id="tf_temaR" max="32767" attributes="0"/>
+                          <Component id="tf_temaR" min="-2" pref="77" max="-2" attributes="0"/>
+                          <Component id="cb_tutor" alignment="0" min="-2" pref="77" max="-2" attributes="0"/>
+                          <Component id="jButton2" min="-2" max="-2" attributes="0"/>
+                          <Component id="jLabel21" min="-2" max="-2" attributes="0"/>
                       </Group>
-                      <EmptySpace min="-2" pref="234" max="-2" attributes="0"/>
+                      <EmptySpace pref="493" max="32767" attributes="0"/>
                   </Group>
               </Group>
             </DimensionLayout>
@@ -725,12 +725,12 @@
                   <Group type="102" alignment="0" attributes="0">
                       <EmptySpace min="-2" pref="33" max="-2" attributes="0"/>
                       <Group type="103" groupAlignment="3" attributes="0">
-                          <Component id="jLabel17" alignment="3" min="-2" max="-2" attributes="0"/>
                           <Component id="jLabel21" alignment="3" min="-2" max="-2" attributes="0"/>
+                          <Component id="jLabel17" alignment="3" min="-2" max="-2" attributes="0"/>
                       </Group>
                       <EmptySpace max="-2" attributes="0"/>
                       <Group type="103" groupAlignment="3" attributes="0">
-                          <Component id="jTextField1" alignment="3" min="-2" max="-2" attributes="0"/>
+                          <Component id="tf_hora" alignment="3" min="-2" max="-2" attributes="0"/>
                           <Component id="tf_temaR" alignment="3" min="-2" max="-2" attributes="0"/>
                       </Group>
                       <EmptySpace min="-2" pref="26" max="-2" attributes="0"/>
@@ -739,35 +739,30 @@
                           <Component id="jLabel23" alignment="3" min="-2" max="-2" attributes="0"/>
                       </Group>
                       <EmptySpace max="-2" attributes="0"/>
-                      <Group type="103" groupAlignment="0" attributes="0">
-                          <Group type="102" attributes="0">
-                              <Component id="cb_tutor" min="-2" max="-2" attributes="0"/>
-                              <EmptySpace min="-2" pref="3" max="-2" attributes="0"/>
-                          </Group>
-                          <Group type="102" alignment="1" attributes="0">
-                              <Component id="tf_aula" min="-2" max="-2" attributes="0"/>
-                              <EmptySpace type="separate" max="-2" attributes="0"/>
-                          </Group>
+                      <Group type="103" groupAlignment="3" attributes="0">
+                          <Component id="tf_aula" alignment="3" min="-2" max="-2" attributes="0"/>
+                          <Component id="cb_tutor" alignment="3" min="-2" max="-2" attributes="0"/>
                       </Group>
+                      <EmptySpace type="separate" max="-2" attributes="0"/>
                       <Component id="jLabel19" min="-2" max="-2" attributes="0"/>
                       <EmptySpace min="-2" pref="3" max="-2" attributes="0"/>
                       <Component id="tf_dia" min="-2" max="-2" attributes="0"/>
                       <EmptySpace type="separate" max="-2" attributes="0"/>
                       <Component id="jLabel20" min="-2" max="-2" attributes="0"/>
                       <EmptySpace max="-2" attributes="0"/>
-                      <Component id="tf_claseR" min="-2" max="-2" attributes="0"/>
-                      <EmptySpace min="-2" pref="11" max="-2" attributes="0"/>
                       <Group type="103" groupAlignment="3" attributes="0">
-                          <Component id="Mes" alignment="3" min="-2" max="-2" attributes="0"/>
+                          <Component id="tf_claseR" alignment="3" min="-2" max="-2" attributes="0"/>
                           <Component id="jButton2" alignment="3" min="-2" max="-2" attributes="0"/>
                       </Group>
-                      <EmptySpace min="-2" pref="5" max="-2" attributes="0"/>
+                      <EmptySpace min="-2" pref="13" max="-2" attributes="0"/>
+                      <Component id="Mes" min="-2" max="-2" attributes="0"/>
+                      <EmptySpace min="-2" pref="10" max="-2" attributes="0"/>
                       <Component id="tf_mes" min="-2" max="-2" attributes="0"/>
                       <EmptySpace type="unrelated" max="-2" attributes="0"/>
                       <Component id="jLabel22" min="-2" max="-2" attributes="0"/>
                       <EmptySpace max="-2" attributes="0"/>
                       <Component id="tf_año" min="-2" max="-2" attributes="0"/>
-                      <EmptySpace pref="211" max="32767" attributes="0"/>
+                      <EmptySpace pref="210" max="32767" attributes="0"/>
                   </Group>
               </Group>
             </DimensionLayout>
@@ -827,8 +822,11 @@
               <Properties>
                 <Property name="text" type="java.lang.String" value="Reservar"/>
               </Properties>
+              <Events>
+                <EventHandler event="mouseClicked" listener="java.awt.event.MouseListener" parameters="java.awt.event.MouseEvent" handler="jButton2MouseClicked"/>
+              </Events>
             </Component>
-            <Component class="javax.swing.JTextField" name="jTextField1">
+            <Component class="javax.swing.JTextField" name="tf_hora">
             </Component>
             <Component class="javax.swing.JTextField" name="tf_aula">
             </Component>
@@ -924,15 +922,33 @@
           <Layout>
             <DimensionLayout dim="0">
               <Group type="103" groupAlignment="0" attributes="0">
-                  <EmptySpace min="0" pref="1056" max="32767" attributes="0"/>
+                  <Group type="102" alignment="0" attributes="0">
+                      <EmptySpace min="-2" pref="339" max="-2" attributes="0"/>
+                      <Component id="jb_modificarT" min="-2" pref="171" max="-2" attributes="0"/>
+                      <EmptySpace pref="546" max="32767" attributes="0"/>
+                  </Group>
               </Group>
             </DimensionLayout>
             <DimensionLayout dim="1">
               <Group type="103" groupAlignment="0" attributes="0">
-                  <EmptySpace min="0" pref="573" max="32767" attributes="0"/>
+                  <Group type="102" alignment="0" attributes="0">
+                      <EmptySpace min="-2" pref="185" max="-2" attributes="0"/>
+                      <Component id="jb_modificarT" min="-2" pref="129" max="-2" attributes="0"/>
+                      <EmptySpace pref="259" max="32767" attributes="0"/>
+                  </Group>
               </Group>
             </DimensionLayout>
           </Layout>
+          <SubComponents>
+            <Component class="javax.swing.JButton" name="jb_modificarT">
+              <Properties>
+                <Property name="text" type="java.lang.String" value="Modificar"/>
+              </Properties>
+              <Events>
+                <EventHandler event="mouseClicked" listener="java.awt.event.MouseListener" parameters="java.awt.event.MouseEvent" handler="jb_modificarTMouseClicked"/>
+              </Events>
+            </Component>
+          </SubComponents>
         </Container>
         <Container class="javax.swing.JPanel" name="jPanel11">
           <Constraints>
@@ -946,21 +962,58 @@
           <Layout>
             <DimensionLayout dim="0">
               <Group type="103" groupAlignment="0" attributes="0">
-                  <EmptySpace min="0" pref="1056" max="32767" attributes="0"/>
+                  <Group type="102" alignment="0" attributes="0">
+                      <EmptySpace min="-2" pref="28" max="-2" attributes="0"/>
+                      <Component id="jScrollPane7" min="-2" pref="778" max="-2" attributes="0"/>
+                      <EmptySpace pref="250" max="32767" attributes="0"/>
+                  </Group>
               </Group>
             </DimensionLayout>
             <DimensionLayout dim="1">
               <Group type="103" groupAlignment="0" attributes="0">
-                  <EmptySpace min="0" pref="573" max="32767" attributes="0"/>
+                  <Group type="102" alignment="0" attributes="0">
+                      <EmptySpace min="-2" pref="94" max="-2" attributes="0"/>
+                      <Component id="jScrollPane7" min="-2" pref="173" max="-2" attributes="0"/>
+                      <EmptySpace pref="306" max="32767" attributes="0"/>
+                  </Group>
               </Group>
             </DimensionLayout>
           </Layout>
+          <SubComponents>
+            <Container class="javax.swing.JScrollPane" name="jScrollPane7">
+              <AuxValues>
+                <AuxValue name="autoScrollPane" type="java.lang.Boolean" value="true"/>
+              </AuxValues>
+
+              <Layout class="org.netbeans.modules.form.compat2.layouts.support.JScrollPaneSupportLayout"/>
+              <SubComponents>
+                <Component class="javax.swing.JTable" name="tablaMT">
+                  <Properties>
+                    <Property name="model" type="javax.swing.table.TableModel" editor="org.netbeans.modules.form.editors2.TableModelEditor">
+                      <Table columnCount="10" rowCount="0">
+                        <Column editable="false" title="Ganancias" type="java.lang.Integer"/>
+                        <Column editable="false" title="Tutorias" type="java.lang.Integer"/>
+                        <Column editable="false" title="Ense&#xf1;anza" type="java.lang.Integer"/>
+                        <Column editable="false" title="Nombre" type="java.lang.String"/>
+                        <Column editable="false" title="Edad" type="java.lang.Integer"/>
+                        <Column editable="false" title="Carrera" type="java.lang.String"/>
+                        <Column editable="false" title="Lugar" type="java.lang.String"/>
+                        <Column editable="false" title="#Cuenta" type="java.lang.Integer"/>
+                        <Column editable="false" title="Usuario" type="java.lang.String"/>
+                        <Column editable="false" title="Contrase&#xf1;a" type="java.lang.String"/>
+                      </Table>
+                    </Property>
+                  </Properties>
+                </Component>
+              </SubComponents>
+            </Container>
+          </SubComponents>
         </Container>
         <Container class="javax.swing.JPanel" name="jPanel12">
           <Constraints>
             <Constraint layoutClass="org.netbeans.modules.form.compat2.layouts.support.JTabbedPaneSupportLayout" value="org.netbeans.modules.form.compat2.layouts.support.JTabbedPaneSupportLayout$JTabbedPaneConstraintsDescription">
-              <JTabbedPaneConstraints tabName="Dar Turoria">
-                <Property name="tabTitle" type="java.lang.String" value="Dar Turoria"/>
+              <JTabbedPaneConstraints tabName="Dar Tutoria">
+                <Property name="tabTitle" type="java.lang.String" value="Dar Tutoria"/>
               </JTabbedPaneConstraints>
             </Constraint>
           </Constraints>
@@ -968,15 +1021,67 @@
           <Layout>
             <DimensionLayout dim="0">
               <Group type="103" groupAlignment="0" attributes="0">
-                  <EmptySpace min="0" pref="1056" max="32767" attributes="0"/>
+                  <Group type="102" attributes="0">
+                      <Group type="103" groupAlignment="0" attributes="0">
+                          <Group type="102" attributes="0">
+                              <EmptySpace min="-2" pref="42" max="-2" attributes="0"/>
+                              <Component id="jScrollPane6" min="-2" pref="740" max="-2" attributes="0"/>
+                          </Group>
+                          <Group type="102" alignment="0" attributes="0">
+                              <EmptySpace min="-2" pref="354" max="-2" attributes="0"/>
+                              <Component id="jButton4" min="-2" max="-2" attributes="0"/>
+                          </Group>
+                      </Group>
+                      <EmptySpace pref="274" max="32767" attributes="0"/>
+                  </Group>
               </Group>
             </DimensionLayout>
             <DimensionLayout dim="1">
               <Group type="103" groupAlignment="0" attributes="0">
-                  <EmptySpace min="0" pref="573" max="32767" attributes="0"/>
+                  <Group type="102" alignment="0" attributes="0">
+                      <EmptySpace min="-2" pref="61" max="-2" attributes="0"/>
+                      <Component id="jScrollPane6" min="-2" pref="137" max="-2" attributes="0"/>
+                      <EmptySpace min="-2" pref="64" max="-2" attributes="0"/>
+                      <Component id="jButton4" min="-2" max="-2" attributes="0"/>
+                      <EmptySpace pref="288" max="32767" attributes="0"/>
+                  </Group>
               </Group>
             </DimensionLayout>
           </Layout>
+          <SubComponents>
+            <Container class="javax.swing.JScrollPane" name="jScrollPane6">
+              <AuxValues>
+                <AuxValue name="autoScrollPane" type="java.lang.Boolean" value="true"/>
+              </AuxValues>
+
+              <Layout class="org.netbeans.modules.form.compat2.layouts.support.JScrollPaneSupportLayout"/>
+              <SubComponents>
+                <Component class="javax.swing.JTable" name="tablaT">
+                  <Properties>
+                    <Property name="model" type="javax.swing.table.TableModel" editor="org.netbeans.modules.form.editors2.TableModelEditor">
+                      <Table columnCount="7" rowCount="0">
+                        <Column editable="false" title="Hora" type="java.lang.Integer"/>
+                        <Column editable="false" title="Aula" type="java.lang.Integer"/>
+                        <Column editable="false" title="Dia" type="java.lang.Integer"/>
+                        <Column editable="false" title="Clase" type="java.lang.String"/>
+                        <Column editable="false" title="Mes" type="java.lang.String"/>
+                        <Column editable="false" title="A&#xf1;o" type="java.lang.Integer"/>
+                        <Column editable="false" title="Tema" type="java.lang.String"/>
+                      </Table>
+                    </Property>
+                  </Properties>
+                </Component>
+              </SubComponents>
+            </Container>
+            <Component class="javax.swing.JButton" name="jButton4">
+              <Properties>
+                <Property name="text" type="java.lang.String" value="Dar Tutoria"/>
+              </Properties>
+              <Events>
+                <EventHandler event="mouseClicked" listener="java.awt.event.MouseListener" parameters="java.awt.event.MouseEvent" handler="jButton4MouseClicked"/>
+              </Events>
+            </Component>
+          </SubComponents>
         </Container>
         <Container class="javax.swing.JPanel" name="jPanel13">
           <Constraints>

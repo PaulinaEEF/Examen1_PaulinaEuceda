@@ -8,21 +8,22 @@ public class Tutoria {
     private String clase;
     private String mes;
     private int año;
+    private String tema;
     private Tutor tutor;
-    private ArrayList<Alumno> alumnos;
+    private ArrayList<Alumno> alumnos=new ArrayList();
 
     public Tutoria() {
     }
 
-    public Tutoria(int hora, int aula, int dia, String clase, String mes, int año, Tutor tutor, ArrayList<Alumno> alumnos) {
+    public Tutoria(int hora, int aula, int dia, String clase, String mes, int año, String tema, Tutor tutor) {
         this.hora = hora;
         this.aula = aula;
         this.dia = dia;
         this.clase = clase;
         this.mes = mes;
         this.año = año;
+        this.tema = tema;
         this.tutor = tutor;
-        this.alumnos = alumnos;
     }
 
     public int getHora() {
@@ -89,9 +90,18 @@ public class Tutoria {
         this.alumnos = alumnos;
     }
 
+    public String getTema() {
+        return tema;
+    }
+
+    public void setTema(String tema) {
+        this.tema = tema;
+    }
+    
+
     @Override
     public String toString() {
-        return "Tutoria{" + "hora=" + hora + ", aula=" + aula + ", dia=" + dia + ", clase=" + clase + ", mes=" + mes + ", a\u00f1o=" + año + ", tutor=" + tutor + ", alumnos=" + alumnos + '}';
+        return super.toString();
     }
 
 }

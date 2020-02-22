@@ -14,11 +14,26 @@ public class Main extends javax.swing.JFrame {
         DefaultComboBoxModel modelo2 = (DefaultComboBoxModel) cb_tutor.getModel();
         modelo2.addElement(new Tutor(100, 3, 56, "Jorge", 18, "Turismo", "Choluteca", 1234567, "Jorge", "1111"));
         cb_tutor.setModel(modelo2);
+        ((Tutor) listaUsuarios.get(0)).getClases().add("Calculo");
+        ((Tutor) listaUsuarios.get(0)).getClases().add("xx");
+        Object[] newrow2 = {
+            100, 3, 56, "Jorge", 18, "Turismo", "Choluteca", 1234567, "Jorge", "1111"
+        };
+        DefaultTableModel modelo4 = (DefaultTableModel) tablaMT.getModel();
+        modelo4.addRow(newrow2);
+        tablaMT.setModel(modelo4);
 
         listaUsuarios.add(new Estudiantes(23, 45, "Tulio", 17, "Derecho", "Tegus", 209876543, "Tulio", "2222"));
         DefaultComboBoxModel modelo = (DefaultComboBoxModel) cb_estudiantes.getModel();
         modelo.addElement(new Estudiantes(23, 45, "Tulio", 17, "Derecho", "Tegus", 209876543, "Tulio", "2222"));
         cb_estudiantes.setModel(modelo);
+
+        Object[] newrow = {
+            "Tulio", 17, "Derecho", "Tegus", 209876543, "Tulio", "2222", 23, 45
+        };
+        DefaultTableModel modelo3 = (DefaultTableModel) tablaList.getModel();
+        modelo3.addRow(newrow);
+        tablaList.setModel(modelo3);
 
         jTabbedPane1.setEnabledAt(1, false);
         jTabbedPane1.setEnabledAt(2, false);
@@ -105,7 +120,7 @@ public class Main extends javax.swing.JFrame {
         jLabel23 = new javax.swing.JLabel();
         cb_tutor = new javax.swing.JComboBox<>();
         jButton2 = new javax.swing.JButton();
-        jTextField1 = new javax.swing.JTextField();
+        tf_hora = new javax.swing.JTextField();
         tf_aula = new javax.swing.JTextField();
         tf_dia = new javax.swing.JTextField();
         tf_claseR = new javax.swing.JTextField();
@@ -117,8 +132,14 @@ public class Main extends javax.swing.JFrame {
         jTable6 = new javax.swing.JTable();
         jButton3 = new javax.swing.JButton();
         jPanel10 = new javax.swing.JPanel();
+        jb_modificarT = new javax.swing.JButton();
         jPanel11 = new javax.swing.JPanel();
+        jScrollPane7 = new javax.swing.JScrollPane();
+        tablaMT = new javax.swing.JTable();
         jPanel12 = new javax.swing.JPanel();
+        jScrollPane6 = new javax.swing.JScrollPane();
+        tablaT = new javax.swing.JTable();
+        jButton4 = new javax.swing.JButton();
         jPanel13 = new javax.swing.JPanel();
         jb_cerrarSesion = new javax.swing.JButton();
 
@@ -214,7 +235,7 @@ public class Main extends javax.swing.JFrame {
             }
         });
 
-        jb_estudiante.setText("Crear Estudante");
+        jb_estudiante.setText("Crear Estudiante");
         jb_estudiante.addMouseListener(new java.awt.event.MouseAdapter() {
             public void mouseClicked(java.awt.event.MouseEvent evt) {
                 jb_estudianteMouseClicked(evt);
@@ -256,7 +277,7 @@ public class Main extends javax.swing.JFrame {
                                 .addComponent(tf_cuenta, javax.swing.GroupLayout.DEFAULT_SIZE, 111, Short.MAX_VALUE)
                                 .addComponent(tf_usuarioC)
                                 .addComponent(tf_contraseñaC)))))
-                .addContainerGap(721, Short.MAX_VALUE))
+                .addContainerGap(719, Short.MAX_VALUE))
         );
         jPanel2Layout.setVerticalGroup(
             jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -593,76 +614,78 @@ public class Main extends javax.swing.JFrame {
         jLabel23.setText("Tutor");
 
         jButton2.setText("Reservar");
+        jButton2.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                jButton2MouseClicked(evt);
+            }
+        });
 
         javax.swing.GroupLayout jPanel7Layout = new javax.swing.GroupLayout(jPanel7);
         jPanel7.setLayout(jPanel7Layout);
         jPanel7Layout.setHorizontalGroup(
             jPanel7Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(jPanel7Layout.createSequentialGroup()
-                .addContainerGap()
+                .addGap(10, 10, 10)
                 .addGroup(jPanel7Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addComponent(jLabel17)
                     .addComponent(jLabel18)
                     .addComponent(jLabel19)
                     .addComponent(jLabel20)
                     .addComponent(Mes)
                     .addComponent(jLabel22)
-                    .addComponent(jTextField1, javax.swing.GroupLayout.PREFERRED_SIZE, 76, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(tf_dia, javax.swing.GroupLayout.PREFERRED_SIZE, 67, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(tf_claseR, javax.swing.GroupLayout.PREFERRED_SIZE, 67, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(tf_mes, javax.swing.GroupLayout.PREFERRED_SIZE, 67, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(tf_año, javax.swing.GroupLayout.PREFERRED_SIZE, 67, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(tf_aula, javax.swing.GroupLayout.PREFERRED_SIZE, 67, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                .addGroup(jPanel7Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
-                    .addComponent(jLabel21)
+                    .addComponent(tf_aula, javax.swing.GroupLayout.PREFERRED_SIZE, 67, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(tf_hora, javax.swing.GroupLayout.PREFERRED_SIZE, 76, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(jLabel17))
+                .addGap(400, 400, 400)
+                .addGroup(jPanel7Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addComponent(jLabel23)
-                    .addComponent(jButton2, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                    .addComponent(cb_tutor, 0, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                    .addComponent(tf_temaR))
-                .addGap(234, 234, 234))
+                    .addComponent(tf_temaR, javax.swing.GroupLayout.PREFERRED_SIZE, 77, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(cb_tutor, javax.swing.GroupLayout.PREFERRED_SIZE, 77, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(jButton2)
+                    .addComponent(jLabel21))
+                .addContainerGap(493, Short.MAX_VALUE))
         );
         jPanel7Layout.setVerticalGroup(
             jPanel7Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(jPanel7Layout.createSequentialGroup()
                 .addGap(33, 33, 33)
                 .addGroup(jPanel7Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(jLabel17)
-                    .addComponent(jLabel21))
+                    .addComponent(jLabel21)
+                    .addComponent(jLabel17))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addGroup(jPanel7Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(jTextField1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(tf_hora, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(tf_temaR, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addGap(26, 26, 26)
                 .addGroup(jPanel7Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(jLabel18)
                     .addComponent(jLabel23))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addGroup(jPanel7Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addGroup(jPanel7Layout.createSequentialGroup()
-                        .addComponent(cb_tutor, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addGap(3, 3, 3))
-                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel7Layout.createSequentialGroup()
-                        .addComponent(tf_aula, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addGap(18, 18, 18)))
+                .addGroup(jPanel7Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(tf_aula, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(cb_tutor, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addGap(18, 18, 18)
                 .addComponent(jLabel19)
                 .addGap(3, 3, 3)
                 .addComponent(tf_dia, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGap(18, 18, 18)
                 .addComponent(jLabel20)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addComponent(tf_claseR, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(11, 11, 11)
                 .addGroup(jPanel7Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(Mes)
+                    .addComponent(tf_claseR, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(jButton2))
-                .addGap(5, 5, 5)
+                .addGap(13, 13, 13)
+                .addComponent(Mes)
+                .addGap(10, 10, 10)
                 .addComponent(tf_mes, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                 .addComponent(jLabel22)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addComponent(tf_año, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addContainerGap(211, Short.MAX_VALUE))
+                .addContainerGap(210, Short.MAX_VALUE))
         );
 
         jTabbedPane1.addTab("Reservar Tutoria", jPanel7);
@@ -720,44 +743,133 @@ public class Main extends javax.swing.JFrame {
 
         jTabbedPane1.addTab("Hacer Examen", jPanel9);
 
+        jb_modificarT.setText("Modificar");
+        jb_modificarT.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                jb_modificarTMouseClicked(evt);
+            }
+        });
+
         javax.swing.GroupLayout jPanel10Layout = new javax.swing.GroupLayout(jPanel10);
         jPanel10.setLayout(jPanel10Layout);
         jPanel10Layout.setHorizontalGroup(
             jPanel10Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 1056, Short.MAX_VALUE)
+            .addGroup(jPanel10Layout.createSequentialGroup()
+                .addGap(339, 339, 339)
+                .addComponent(jb_modificarT, javax.swing.GroupLayout.PREFERRED_SIZE, 171, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addContainerGap(546, Short.MAX_VALUE))
         );
         jPanel10Layout.setVerticalGroup(
             jPanel10Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 573, Short.MAX_VALUE)
+            .addGroup(jPanel10Layout.createSequentialGroup()
+                .addGap(185, 185, 185)
+                .addComponent(jb_modificarT, javax.swing.GroupLayout.PREFERRED_SIZE, 129, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addContainerGap(259, Short.MAX_VALUE))
         );
 
         jTabbedPane1.addTab("Modificar", jPanel10);
+
+        tablaMT.setModel(new javax.swing.table.DefaultTableModel(
+            new Object [][] {
+
+            },
+            new String [] {
+                "Ganancias", "Tutorias", "Enseñanza", "Nombre", "Edad", "Carrera", "Lugar", "#Cuenta", "Usuario", "Contraseña"
+            }
+        ) {
+            Class[] types = new Class [] {
+                java.lang.Integer.class, java.lang.Integer.class, java.lang.Integer.class, java.lang.String.class, java.lang.Integer.class, java.lang.String.class, java.lang.String.class, java.lang.Integer.class, java.lang.String.class, java.lang.String.class
+            };
+            boolean[] canEdit = new boolean [] {
+                false, false, false, false, false, false, false, false, false, false
+            };
+
+            public Class getColumnClass(int columnIndex) {
+                return types [columnIndex];
+            }
+
+            public boolean isCellEditable(int rowIndex, int columnIndex) {
+                return canEdit [columnIndex];
+            }
+        });
+        jScrollPane7.setViewportView(tablaMT);
 
         javax.swing.GroupLayout jPanel11Layout = new javax.swing.GroupLayout(jPanel11);
         jPanel11.setLayout(jPanel11Layout);
         jPanel11Layout.setHorizontalGroup(
             jPanel11Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 1056, Short.MAX_VALUE)
+            .addGroup(jPanel11Layout.createSequentialGroup()
+                .addGap(28, 28, 28)
+                .addComponent(jScrollPane7, javax.swing.GroupLayout.PREFERRED_SIZE, 778, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addContainerGap(250, Short.MAX_VALUE))
         );
         jPanel11Layout.setVerticalGroup(
             jPanel11Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 573, Short.MAX_VALUE)
+            .addGroup(jPanel11Layout.createSequentialGroup()
+                .addGap(94, 94, 94)
+                .addComponent(jScrollPane7, javax.swing.GroupLayout.PREFERRED_SIZE, 173, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addContainerGap(306, Short.MAX_VALUE))
         );
 
         jTabbedPane1.addTab("Listar Datos", jPanel11);
+
+        tablaT.setModel(new javax.swing.table.DefaultTableModel(
+            new Object [][] {
+
+            },
+            new String [] {
+                "Hora", "Aula", "Dia", "Clase", "Mes", "Año", "Tema"
+            }
+        ) {
+            Class[] types = new Class [] {
+                java.lang.Integer.class, java.lang.Integer.class, java.lang.Integer.class, java.lang.String.class, java.lang.String.class, java.lang.Integer.class, java.lang.String.class
+            };
+            boolean[] canEdit = new boolean [] {
+                false, false, false, false, false, false, false
+            };
+
+            public Class getColumnClass(int columnIndex) {
+                return types [columnIndex];
+            }
+
+            public boolean isCellEditable(int rowIndex, int columnIndex) {
+                return canEdit [columnIndex];
+            }
+        });
+        jScrollPane6.setViewportView(tablaT);
+
+        jButton4.setText("Dar Tutoria");
+        jButton4.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                jButton4MouseClicked(evt);
+            }
+        });
 
         javax.swing.GroupLayout jPanel12Layout = new javax.swing.GroupLayout(jPanel12);
         jPanel12.setLayout(jPanel12Layout);
         jPanel12Layout.setHorizontalGroup(
             jPanel12Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 1056, Short.MAX_VALUE)
+            .addGroup(jPanel12Layout.createSequentialGroup()
+                .addGroup(jPanel12Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addGroup(jPanel12Layout.createSequentialGroup()
+                        .addGap(42, 42, 42)
+                        .addComponent(jScrollPane6, javax.swing.GroupLayout.PREFERRED_SIZE, 740, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addGroup(jPanel12Layout.createSequentialGroup()
+                        .addGap(354, 354, 354)
+                        .addComponent(jButton4)))
+                .addContainerGap(274, Short.MAX_VALUE))
         );
         jPanel12Layout.setVerticalGroup(
             jPanel12Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 573, Short.MAX_VALUE)
+            .addGroup(jPanel12Layout.createSequentialGroup()
+                .addGap(61, 61, 61)
+                .addComponent(jScrollPane6, javax.swing.GroupLayout.PREFERRED_SIZE, 137, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(64, 64, 64)
+                .addComponent(jButton4)
+                .addContainerGap(288, Short.MAX_VALUE))
         );
 
-        jTabbedPane1.addTab("Dar Turoria", jPanel12);
+        jTabbedPane1.addTab("Dar Tutoria", jPanel12);
 
         jb_cerrarSesion.setText("Cerrar Sesion");
         jb_cerrarSesion.addMouseListener(new java.awt.event.MouseAdapter() {
@@ -806,6 +918,7 @@ public class Main extends javax.swing.JFrame {
 
     private void jButton1MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jButton1MouseClicked
         // TODO add your handling code here:
+
         String usuario = tf_usuario.getText();
         String contraseña = tf_contraseñaL.getText();
 
@@ -818,6 +931,7 @@ public class Main extends javax.swing.JFrame {
                     jTabbedPane1.setEnabledAt(9, true);
                     jTabbedPane1.setEnabledAt(10, true);
                     jTabbedPane1.setEnabledAt(11, true);
+                    tutor = i;
                 } else if (listaUsuarios.get(i) instanceof Estudiantes) {
                     jTabbedPane1.setEnabledAt(2, true);
                     jTabbedPane1.setEnabledAt(3, true);
@@ -826,6 +940,7 @@ public class Main extends javax.swing.JFrame {
                     jTabbedPane1.setEnabledAt(6, true);
                     jTabbedPane1.setEnabledAt(7, true);
                     jTabbedPane1.setEnabledAt(11, true);
+                    estudiante = i;
                     JOptionPane.showMessageDialog(this, "Se inició sesion con exito");
                 }
                 jTabbedPane1.setEnabledAt(0, false);
@@ -866,6 +981,13 @@ public class Main extends javax.swing.JFrame {
         modelo.addElement(new Tutor(ganancia, tutorias, enseñanza, nombre, edad, carrera, lugar, cuenta, usuario, contraseña));
         cb_tutor.setModel(modelo);
 
+        Object[] newrow2 = {
+            ganancia, tutorias, enseñanza, nombre, edad, carrera, lugar, cuenta, usuario, contraseña
+        };
+        DefaultTableModel modelo4 = (DefaultTableModel) tablaMT.getModel();
+        modelo4.addRow(newrow2);
+        tablaMT.setModel(modelo4);
+
         listaUsuarios.add(new Tutor(ganancia, tutorias, enseñanza, nombre, edad, carrera, lugar, cuenta, usuario, contraseña));
         JOptionPane.showMessageDialog(this, "Tutor creado con exito");
 
@@ -885,8 +1007,8 @@ public class Main extends javax.swing.JFrame {
         int edad = Integer.parseInt(ed);
         int cuenta = Integer.parseInt(cue);
 
-        String cono = JOptionPane.showInputDialog(this, "Ingrese la ganancia");
-        String niv = JOptionPane.showInputDialog(this, "Ingrese la cantidad de tutorias");
+        String cono = JOptionPane.showInputDialog(this, "Ingrese el nivel de conocimiento");
+        String niv = JOptionPane.showInputDialog(this, "Ingrese el nivel de aprendizaje");
 
         int conocimiento = Integer.parseInt(cono);
         int nivel = Integer.parseInt(niv);
@@ -896,13 +1018,13 @@ public class Main extends javax.swing.JFrame {
         DefaultComboBoxModel modelo = (DefaultComboBoxModel) cb_estudiantes.getModel();
         modelo.addElement(new Estudiantes(conocimiento, nivel, nombre, edad, carrera, lugar, cuenta, usuario, contraseña));
         cb_estudiantes.setModel(modelo);
-        
+
         Object[] newrow = {
-                nombre, edad, carrera, lugar, cuenta, usuario, contraseña
+            nombre, edad, carrera, lugar, cuenta, usuario, contraseña
         };
-            DefaultTableModel modelo2 = (DefaultTableModel) tablaList.getModel();
-            modelo2.addRow(newrow);
-            tablaList.setModel(modelo2);
+        DefaultTableModel modelo2 = (DefaultTableModel) tablaList.getModel();
+        modelo2.addRow(newrow);
+        tablaList.setModel(modelo2);
 
         JOptionPane.showMessageDialog(this, "Estudiante creado con exito");
     }//GEN-LAST:event_jb_estudianteMouseClicked
@@ -918,7 +1040,6 @@ public class Main extends javax.swing.JFrame {
         int conocimiento = Integer.parseInt(cono);
         int puntaje = Integer.parseInt(pun);
 
-
         Object[] newrow = {
             clase, conocimiento, tema, puntaje
         };
@@ -926,7 +1047,8 @@ public class Main extends javax.swing.JFrame {
         modelo.addRow(newrow);
         tablaEP.setModel(modelo);
 
-        listaExamenes.add(new Examen(clase, conocimiento, tema, puntaje));
+        ((Estudiantes) listaUsuarios.get(estudiante)).getExamenes().add(new Examen(clase, conocimiento, tema, puntaje));
+
         JOptionPane.showMessageDialog(this, "Examen creado con exito");
     }//GEN-LAST:event_jb_examenMouseClicked
 
@@ -958,6 +1080,146 @@ public class Main extends javax.swing.JFrame {
         jTabbedPane1.setEnabledAt(10, false);
         jTabbedPane1.setEnabledAt(11, false);
     }//GEN-LAST:event_jb_cerrarSesionMouseClicked
+
+    private void jButton2MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jButton2MouseClicked
+        // TODO add your handling code here:
+        boolean flag = true;
+        String ho = tf_hora.getText();
+        String au = tf_aula.getText();
+        String di = tf_dia.getText();
+        String clase = tf_clase.getText();
+        String mes = tf_mes.getText();
+        String añ = tf_año.getText();
+        String tema = tf_tema.getText();
+
+        Tutor tutor = ((Tutor) cb_tutor.getSelectedItem());
+
+        int hora = Integer.parseInt(ho);
+        int aula = Integer.parseInt(au);
+        int año = Integer.parseInt(añ);
+        int dia = Integer.parseInt(di);
+
+        for (int i = 0; i < listaTutorias.size(); i++) {
+            if (listaTutorias.get(i).getHora() == hora && listaTutorias.get(i).getAula() == aula && listaTutorias.get(i).getDia() == dia && listaTutorias.get(i).getClase().equals(clase)
+                    && listaTutorias.get(i).getMes().equals(mes) && listaTutorias.get(i).getAño() == año && listaTutorias.get(i).getTema().equals(tema) && listaTutorias.get(i).getTutor() == tutor) {
+                JOptionPane.showMessageDialog(this, "Ya existe esa tutoria, se le añadirá un cupo");
+                listaTutorias.get(i).getAlumnos().add(listaUsuarios.get(estudiante));
+
+            } else {
+                for (int j = 0; j < listaUsuarios.size(); j++) {
+                    if (listaUsuarios.get(j) instanceof Tutor) {
+                        if (listaUsuarios.get(j).getNombre().equals(tutor.getNombre())) {
+
+                            listaTutorias.add(new Tutoria(hora, aula, dia, clase, mes, año, tema, tutor));
+                            break;
+                        }
+                    }
+                }
+            }
+            flag = false;
+        }
+
+        if (flag == true) {
+            for (int j = 0; j < listaUsuarios.size(); j++) {
+                if (listaUsuarios.get(j) instanceof Tutor) {
+                    if (listaUsuarios.get(j).getNombre().equals(tutor.getNombre())) {
+
+                        listaTutorias.add(new Tutoria(hora, aula, dia, clase, mes, año, tema, tutor));
+                        break;
+
+                    }
+                } else {
+                }
+            }
+        }
+        Object[] newrow2 = {
+            hora, aula, dia, clase, mes, año, tema
+        };
+        DefaultTableModel modelo4 = (DefaultTableModel) tablaT.getModel();
+        modelo4.addRow(newrow2);
+        tablaT.setModel(modelo4);
+
+    }//GEN-LAST:event_jButton2MouseClicked
+
+    private void jb_modificarTMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jb_modificarTMouseClicked
+        // TODO add your handling code here:
+        String nombre = listaUsuarios.get(tutor).getNombre();
+        int edad = listaUsuarios.get(tutor).getEdad();
+        String carrera = listaUsuarios.get(tutor).getCarrera();
+        String lugar = listaUsuarios.get(tutor).getLugar();
+        int cuenta = listaUsuarios.get(tutor).getCuenta();
+        String usuario = listaUsuarios.get(tutor).getUsuario();
+        String contraseña = listaUsuarios.get(tutor).getContraseña();
+        int ganancia = ((Tutor)listaUsuarios.get(tutor)).getGanancias();
+        int tutorias = ((Tutor)listaUsuarios.get(tutor)).getTutorias();
+        int enseñanza = ((Tutor)listaUsuarios.get(tutor)).getEnseñanza();
+        
+        String op = JOptionPane.showInputDialog(this, "1. Nombre \n 2. Edad \n 3. Carrera \n 4. Lugar \n 5. #Cuenta \n 6. Usuario \n 7. Contraseña \n 8. Ganancias \n 9. Cantidad de Tutorias \n 10. Nivel de Enseñanza");
+        int opcion = Integer.parseInt(op);
+        switch (opcion) {
+            case 1:
+                nombre = JOptionPane.showInputDialog(this, "Ingrese el nuevo nombre");
+                listaUsuarios.get(tutor).setNombre(nombre);
+                
+                break;
+            case 2:
+                String ed = JOptionPane.showInputDialog(this, "Ingrese la nueva edad");
+                edad = Integer.parseInt(ed);
+                listaUsuarios.get(tutor).setEdad(edad);
+                break;
+            case 3:
+                carrera = JOptionPane.showInputDialog(this, "Ingrese la nueva carrera");
+                listaUsuarios.get(tutor).setCarrera(carrera);
+                break;
+            case 4:
+                lugar = JOptionPane.showInputDialog(this, "Ingrese el nuevo lugar de nacimiento");
+                listaUsuarios.get(tutor).setLugar(lugar);
+                break;
+            case 5:
+                String cue = JOptionPane.showInputDialog(this, "Ingrese la nueva cuenta");
+                cuenta = Integer.parseInt(cue);
+                listaUsuarios.get(tutor).setCuenta(cuenta);
+                break;
+            case 6:
+                usuario = JOptionPane.showInputDialog(this, "Ingrese el nuevo usuario");
+                listaUsuarios.get(tutor).setUsuario(usuario);
+                break;
+            case 7:
+                contraseña = JOptionPane.showInputDialog(this, "Ingrese la nueva contraseña");
+                listaUsuarios.get(tutor).setContraseña(contraseña);
+                break;
+            case 8:
+                String gan = JOptionPane.showInputDialog(this, "Ingrese la nueva ganancia");
+                ganancia = Integer.parseInt(gan);
+                ((Tutor) listaUsuarios.get(tutor)).setGanancias(ganancia);
+                break;
+            case 9:
+                String tut = JOptionPane.showInputDialog(this, "Ingrese la nueva cantidad de tutorias dadas");
+                tutorias = Integer.parseInt(tut);
+                ((Tutor) listaUsuarios.get(tutor)).setTutorias(tutorias);
+                break;
+            case 10:
+                String niv = JOptionPane.showInputDialog(this, "Ingrese el nuevo nivel de enseñanza");
+                enseñanza = Integer.parseInt(niv);
+                ((Tutor) listaUsuarios.get(tutor)).setEnseñanza(enseñanza);
+                break;
+            default:
+                JOptionPane.showMessageDialog(this, "No existe esa opcion");
+                break;
+        }
+
+        Object[] newrow2 = {
+            ganancia, tutorias, enseñanza, nombre, edad, carrera, lugar, cuenta, usuario, contraseña
+        };
+        DefaultTableModel modelo4 = (DefaultTableModel) tablaMT.getModel();
+        modelo4.addRow(newrow2);
+        tablaMT.setModel(modelo4);
+    }//GEN-LAST:event_jb_modificarTMouseClicked
+
+    private void jButton4MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jButton4MouseClicked
+        // TODO add your handling code here:
+        JOptionPane.showMessageDialog(this, "En construcccion");
+    }//GEN-LAST:event_jButton4MouseClicked
 
     /**
      * @param args the command line arguments
@@ -1002,6 +1264,7 @@ public class Main extends javax.swing.JFrame {
     private javax.swing.JButton jButton1;
     private javax.swing.JButton jButton2;
     private javax.swing.JButton jButton3;
+    private javax.swing.JButton jButton4;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel10;
     private javax.swing.JLabel jLabel11;
@@ -1042,19 +1305,23 @@ public class Main extends javax.swing.JFrame {
     private javax.swing.JScrollPane jScrollPane3;
     private javax.swing.JScrollPane jScrollPane4;
     private javax.swing.JScrollPane jScrollPane5;
+    private javax.swing.JScrollPane jScrollPane6;
+    private javax.swing.JScrollPane jScrollPane7;
     private javax.swing.JTabbedPane jTabbedPane1;
     private javax.swing.JTable jTable4;
     private javax.swing.JTable jTable5;
     private javax.swing.JTable jTable6;
-    private javax.swing.JTextField jTextField1;
     private javax.swing.JButton jb_cerrarSesion;
     private javax.swing.JButton jb_estudiante;
     private javax.swing.JButton jb_examen;
+    private javax.swing.JButton jb_modificarT;
     private javax.swing.JButton jb_registrar;
     private javax.swing.JButton jb_tutor;
     private javax.swing.JTable tablaEP;
     private javax.swing.JTable tablaList;
+    private javax.swing.JTable tablaMT;
     private javax.swing.JTable tablaMod;
+    private javax.swing.JTable tablaT;
     private javax.swing.JTextField tf_aula;
     private javax.swing.JTextField tf_año;
     private javax.swing.JTextField tf_carrera;
@@ -1066,6 +1333,7 @@ public class Main extends javax.swing.JFrame {
     private javax.swing.JTextField tf_cuenta;
     private javax.swing.JTextField tf_dia;
     private javax.swing.JTextField tf_edad;
+    private javax.swing.JTextField tf_hora;
     private javax.swing.JTextField tf_lugar;
     private javax.swing.JTextField tf_mes;
     private javax.swing.JTextField tf_nombre;
@@ -1076,6 +1344,6 @@ public class Main extends javax.swing.JFrame {
     private javax.swing.JTextField tf_usuarioC;
     // End of variables declaration//GEN-END:variables
     ArrayList<Alumno> listaUsuarios = new ArrayList();
-    ArrayList<Examen> listaExamenes = new ArrayList();
-
+    ArrayList<Tutoria> listaTutorias = new ArrayList();
+    int estudiante, tutor;
 }

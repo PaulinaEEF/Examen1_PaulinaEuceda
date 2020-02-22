@@ -6,7 +6,7 @@ public class Tutor extends Alumno{
     private int ganancias;
     private int tutorias;
     private int enseñanza;
-    ArrayList<String> clases;
+    ArrayList<String> clases=new ArrayList();
 
     public Tutor() {
     }
